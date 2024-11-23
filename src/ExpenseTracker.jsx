@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./ExpenseTracker.css";
 
-const ExpenseTracker = () => {
+const ExpenseTracker = ({ selectedDate }) => {
+  // Fetch expenses from localStorage, filtered by selectedDate
   const [expenses, setExpenses] = useState(
-    JSON.parse(localStorage.getItem("expenses")) || []
+    JSON.parse(localStorage.getItem(`${selectedDate}-expenses`)) || []
   );
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
@@ -18,11 +19,12 @@ const ExpenseTracker = () => {
       id: Date.now(),
       amount: parseFloat(amount),
       description,
+      date: selectedDate,
     };
 
     const updatedExpenses = [...expenses, newExpense];
     setExpenses(updatedExpenses);
-    localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+    localStorage.setItem(`${selectedDate}-expenses`, JSON.stringify(updatedExpenses));
     setAmount("");
     setDescription("");
   };
@@ -30,15 +32,16 @@ const ExpenseTracker = () => {
   const deleteExpense = (id) => {
     const updatedExpenses = expenses.filter((expense) => expense.id !== id);
     setExpenses(updatedExpenses);
-    localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+    localStorage.setItem(`${selectedDate}-expenses`, JSON.stringify(updatedExpenses));
   };
 
   useEffect(() => {
-    const savedExpenses = JSON.parse(localStorage.getItem("expenses"));
+    // Sync expenses on date change
+    const savedExpenses = JSON.parse(localStorage.getItem(`${selectedDate}-expenses`));
     if (savedExpenses) {
       setExpenses(savedExpenses);
     }
-  }, []);
+  }, [selectedDate]); // Re-run when selectedDate changes
 
   const totalExpense = expenses.reduce((total, expense) => total + expense.amount, 0);
 

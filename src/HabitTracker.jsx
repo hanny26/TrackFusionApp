@@ -6,12 +6,9 @@ import "./HabitTracker.css";
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const HabitTracker = () => {
+const HabitTracker = ({ selectedDate }) => {
   const [habits, setHabits] = useState(
-    JSON.parse(localStorage.getItem("habits"))?.map((habit) => ({
-      ...habit,
-      progress: habit.progress || [], // Ensure progress is initialized as an array
-    })) || []
+    JSON.parse(localStorage.getItem(`${selectedDate}-habits`)) || []
   );
   const [habitName, setHabitName] = useState("");
 
@@ -25,7 +22,7 @@ const HabitTracker = () => {
     const newHabit = { id: Date.now(), name: habitName, progress: [] };
     const updatedHabits = [...habits, newHabit];
     setHabits(updatedHabits);
-    localStorage.setItem("habits", JSON.stringify(updatedHabits));
+    localStorage.setItem(`${selectedDate}-habits`, JSON.stringify(updatedHabits)); // Use selectedDate to save habits for that day
     setHabitName("");
   };
 
@@ -33,7 +30,7 @@ const HabitTracker = () => {
   const removeHabit = (habitId) => {
     const updatedHabits = habits.filter((habit) => habit.id !== habitId);
     setHabits(updatedHabits);
-    localStorage.setItem("habits", JSON.stringify(updatedHabits));
+    localStorage.setItem(`${selectedDate}-habits`, JSON.stringify(updatedHabits)); // Use selectedDate to update
   };
 
   // Toggle completion for today's date
@@ -50,18 +47,18 @@ const HabitTracker = () => {
       return habit;
     });
     setHabits(updatedHabits);
-    localStorage.setItem("habits", JSON.stringify(updatedHabits));
+    localStorage.setItem(`${selectedDate}-habits`, JSON.stringify(updatedHabits)); // Use selectedDate to save progress
   };
 
   // Load habits from localStorage on initial render
   useEffect(() => {
-    const savedHabits = JSON.parse(localStorage.getItem("habits")) || [];
+    const savedHabits = JSON.parse(localStorage.getItem(`${selectedDate}-habits`)) || [];
     const sanitizedHabits = savedHabits.map((habit) => ({
       ...habit,
       progress: habit.progress || [],
     }));
     setHabits(sanitizedHabits);
-  }, []);
+  }, [selectedDate]); // Make sure habits reload when selectedDate changes
 
   // Filter habits into completed and pending categories
   const today = new Date().toDateString();

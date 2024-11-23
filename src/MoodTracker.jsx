@@ -29,15 +29,13 @@ const genericMessages = {
   default: "Hope you have an amazing day!",
 };
 
-const MoodTracker = () => {
-  const [selectedMood, setSelectedMood] = useState(
-    localStorage.getItem("mood") || null
-  );
+const MoodTracker = ({ selectedDate }) => {
+  const [selectedMood, setSelectedMood] = useState(null);
   const [content, setContent] = useState("");
 
   const handleMoodSelect = (mood) => {
     setSelectedMood(mood);
-    localStorage.setItem("mood", mood);
+    localStorage.setItem(`${selectedDate}-mood`, mood);
 
     // Dynamically set content based on mood
     if (mood === "😔" || mood === "😢") {
@@ -65,11 +63,11 @@ const MoodTracker = () => {
   };
 
   useEffect(() => {
-    const savedMood = localStorage.getItem("mood");
+    const savedMood = localStorage.getItem(`${selectedDate}-mood`);
     if (savedMood) {
       setSelectedMood(savedMood);
     }
-  }, []);
+  }, [selectedDate]);
 
   return (
     <div className="mood-tracker">
