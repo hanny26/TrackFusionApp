@@ -18,9 +18,9 @@ const motivationalQuotes = [
 ];
 
 const funnyMemes = [
-  "https://i.imgflip.com/1bij.jpg", // Example meme URLs
-  "https://i.imgflip.com/30b1gx.jpg",
-  "https://i.imgflip.com/26am.jpg",
+  "https://i.pinimg.com/control2/736x/00/a3/4b/00a34ba47602db06a50bc6dd12be696f.jpg", // Example meme URLs
+  "https://i.pinimg.com/control2/736x/ef/c8/d2/efc8d2985378b3f8ff53722f04aee16f.jpg",
+  "https://i.pinimg.com/control2/736x/7b/17/f9/7b17f98bd3bc84909cb9997a02a778c3.jpg",
 ];
 
 const genericMessages = {
