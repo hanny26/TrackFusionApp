@@ -1,0 +1,46 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling the dashboard title */
+.dashboard-title {
+  font-size: 2.5rem; /* Base font size */
+  font-weight: 700; /* Make text bold */
+  color: white; /* White text */
+  text-align: center; /* Center alignment */
+  padding: 20px; /* Space inside the box */
+  border-radius: 10px; /* Rounded corners for the box */
+  background: linear-gradient(to right, #4f46e5, #3a256b, #592d88); /* Gradient box background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  margin: 22px auto; /* Center the box horizontally */
+  display: inline-block; /* Shrink-wrap the box around the text */
+}
+
+/* Hover effect */
+.dashboard-title:hover {
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
