@@ -1,8 +1,8 @@
-import MoodTracker from "./HabitTracker";
-import HabitTracker from "./MoodTracker";
+import MoodTracker from "./components/HabitTracker";
+import HabitTracker from "./components/MoodTracker";
 import './App.css'; // Import custom CSS
 import { motion } from "framer-motion";
-import ExpenseTracker from "./ExpenseTracker";
+import ExpenseTracker from "./components/ExpenseTracker";
 import { useState, useEffect } from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
 

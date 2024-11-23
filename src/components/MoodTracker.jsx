@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./MoodTracker.css";
+import "../style/MoodTracker.css";
 
 // Moods and corresponding content
 const moods = [

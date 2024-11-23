@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import "./HabitTracker.css";
+import "../style/HabitTracker.css";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);

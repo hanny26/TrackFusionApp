@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ExpenseTracker.css";
+import "../style/ExpenseTracker.css";
 
 const ExpenseTracker = ({ selectedDate }) => {
   // Fetch expenses from localStorage, filtered by selectedDate
