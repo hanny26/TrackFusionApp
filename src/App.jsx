@@ -4,6 +4,7 @@ import './App.css'; // Import custom CSS
 import { motion } from "framer-motion";
 import ExpenseTracker from "./ExpenseTracker";
 import { useState, useEffect } from "react";
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const App = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toDateString());
@@ -51,7 +52,9 @@ const App = () => {
   }, [selectedDate]);
 
   return (
+    
     <div className="dashboard">
+      
       <h1 className="dashboard-title">Personal Dashboard📈</h1>
       <div className="date-thought-container">
         <div className="date-picker">
@@ -91,14 +94,14 @@ const App = () => {
             )}
           </div>
         </div>
-      </div>
-      {/* Display saved thought for the selected date */}
       {savedThought && (
         <div className="saved-thought">
           <h3>Your Thought for {selectedDate}:</h3>
           <p className="thought-content">{savedThought}</p>
         </div>
       )}
+      </div>
+      {/* Display saved thought for the selected date */}
 
       <div className="dashboard-grid">
         <MoodTracker />
@@ -110,13 +113,13 @@ const App = () => {
   <div className="footer-content">
     <p>Created by <strong>Hanny Vyas</strong></p>
     <div className="footer-icons">
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/hanny26" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/hanny-vyas/" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-linkedin"></i>
       </a>
-      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://x.com/HannyVyas3" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-twitter"></i>
       </a>
     </div>

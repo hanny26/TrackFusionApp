@@ -26,131 +26,138 @@
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
-/* Container for the date picker */
-.date-picker {
+/* here Date picker and thought */
+/* General Container */
+.date-thought-container {
+  max-width: 90%; /* Start with a flexible width */
+  max-height: 90%; /* Ensure no overflow on desktop */
+  margin: 2rem auto ;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 20px;
-  background-color: #ffffff; /* White background for clean look */
-  border: 2px solid #ddd; /* Light border */
-  border-radius: 12px; /* Rounded corners for a smooth, modern feel */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  transition: all 0.3s ease; /* Smooth transition on hover */
-  max-width: 450px;
-  width: 100%; /* Full width for smaller screens */
-  margin: 20px auto; /* Center it horizontally */
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: max-width 0.3s ease, padding 0.3s ease;
 }
 
-.date-picker:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect on hover */
+/* Wide screens (Desktop) */
+@media (min-width: 1024px) {
+  .date-thought-container {
+    max-width: 60%; /* Wider container for desktops */
+    padding: 2.5rem;
+    
+  }
 }
 
-/* Input field styling */
-.date-picker input {
+/* Date Picker */
+.date-picker input[type="date"] {
   width: 100%;
-  padding: 14px 16px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #333; /* Dark text for contrast */
-  background-color: #f7f7f7; /* Light gray background for the input field */
-  border: 2px solid #ccc; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  outline: none;
-  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-/* Input field focus state */
-.date-picker input:focus {
-  border-color: #4CAF50; /* Green border when focused */
-  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Green glow around input on focus */
-}
-
-/* Customizing the calendar icon */
-.date-picker input::-webkit-calendar-picker-indicator {
-  filter: invert(0.6); /* Lightens the calendar icon */
-}
-/* Container for the Thought Section */
-.thought-section {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  transition: transform 0.3s ease;
-}
-
-/* Textarea for entering thoughts */
-.thought-input {
-  width: 100%;
-  height: 120px;
-  padding: 15px;
+  padding: 1rem;
   font-size: 1.2rem;
-  border-radius: 8px;
-  border: 2px solid #ddd;
-  background-color: #fafafa;
-  color: #333;
-  resize: none;
-  box-sizing: border-box;
-  outline: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
 }
 
-/* Placeholder styling */
-.thought-input::placeholder {
-  color: #aaa;
-  font-style: italic;
+.date-picker input[type="date"]:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Thought buttons container */
+.date-picker input[type="date"]:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Thought Section */
+.thought-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thought-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.thought-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons Section */
 .thought-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  gap: 1rem;
 }
 
-/* Save and Remove Buttons */
-.save-button, .remove-button {
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
+.save-button,
+.remove-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Save button styles */
 .save-button {
-  background-color: #4caf50;
-  color: white;
-  box-shadow: 0 4px 10px rgba(72, 192, 72, 0.2);
+  background: linear-gradient(145deg, #4caf50, #81c784);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .save-button:hover {
-  background-color: #45a049;
-  box-shadow: 0 6px 15px rgba(72, 192, 72, 0.3);
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #43a047, #66bb6a);
 }
 
-.save-button:active {
-  transform: scale(0.98);
-}
-
-/* Remove button styles */
 .remove-button {
-  background-color: #f44336;
-  color: white;
-  box-shadow: 0 4px 10px rgba(244, 67, 54, 0.2);
+  background: linear-gradient(145deg, #e53935, #ef5350);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .remove-button:hover {
-  background-color: #e53935;
-  box-shadow: 0 6px 15px rgba(244, 67, 54, 0.3);
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #d32f2f, #f44336);
 }
 
-.remove-button:active {
-  transform: scale(0.98);
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+  .date-thought-container {
+    max-width: 90%; /* Container remains flexible */
+    padding: 1.5rem;
+  }
+
+  .thought-buttons {
+    flex-direction: column;
+  }
+
+  .save-button,
+  .remove-button {
+    width: 100%; /* Full-width buttons on small screens */
+  }
 }
 
 /* Saved Thought section */
@@ -167,6 +174,7 @@
   color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .saved-thought:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
@@ -189,6 +197,7 @@
   color: rgba(28, 9, 9, 0.9);
   font-weight: bold;
 }
+
 .saved-thought::before {
   content: '';
   position: absolute;
@@ -202,11 +211,13 @@
   background-size: 300% 300%;
   animation: gradientAnimation 6s ease infinite;
 }
+
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 .saved-thought:hover::before {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
               0 0 40px rgba(0, 212, 255, 0.4);
@@ -260,86 +271,6 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .thought-section {
-    padding: 15px;
-    max-width: 90%;
-  }
-
-  .thought-input {
-    height: 100px;
-    font-size: 1.1rem;
-  }
-
-  .thought-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .save-button, .remove-button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* Animation on hover of thought section */
-.thought-section:hover {
-  transform: translateY(-5px);
-}
-
-/* Styling for Date Picker Section */
-.date-picker input {
-  padding: 10px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.date-picker input:focus {
-  border-color: #1976d2;
-  box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
-}
-
-/* Responsive adjustments for mobile devices */
-@media (max-width: 480px) {
-  .save-button, .remove-button {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
-
-  .thought-input {
-    font-size: 1rem;
-  }
-}
-/* Responsiveness */
-@media (max-width: 768px) {
-  .date-picker {
-    padding: 10px 15px; /* Slightly reduced padding on smaller screens */
-    max-width: 80%; /* Restrict max-width to 80% on smaller screens */
-  }
-
-  .date-picker input {
-    font-size: 14px; /* Slightly smaller font on tablets */
-    padding: 12px 14px; /* Adjust padding for tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .date-picker {
-    padding: 8px 12px; /* Reduced padding for mobile */
-    max-width: 95%; /* Take up 95% of screen width */
-  }
-
-  .date-picker input {
-    font-size: 13px; /* Smaller font size for small screens */
-    padding: 10px 12px; /* Adjust padding further for mobile */
-  }
-}
-
-
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -357,11 +288,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .footer {
   margin-top: 40px;
   padding: 20px;
   text-align: center;
-  color:#0072ff;
+  color: #0072ff;
   font-family: 'Poppins', sans-serif;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
@@ -385,13 +317,13 @@
 
 .footer-icons a {
   margin: 0 10px;
-  color: #fff;
+  color: #0d0d0d;
   font-size: 24px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .footer-icons a:hover {
-  color: #ffcc00;
+  color: #4f1a8b;
   transform: scale(1.2);
 }
 
@@ -404,6 +336,5 @@
 
 .footer strong {
   font-weight: bold;
-  color: #ffcc00;
+  color: #2a33ad;
 }
-
