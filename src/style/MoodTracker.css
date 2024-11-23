@@ -1,83 +1,83 @@
 body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(145deg, #1e3c72, #2a5298);
-  margin: 0;
-  color: black;
-  overflow-x: hidden;
-
-}
-
-.mood-tracker {
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
- border-radius: 40px;
-}
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: black;
-  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(145deg, #1e3c72, #2a5298);
+    margin: 0;
+    color: black;
+    overflow-x: hidden;
   
-}
-
-.mood-options {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.mood {
-  font-size: 3rem;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #f3e8ff, #e8d0ff);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.mood:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
-}
-
-.selected-mood {
-  border: 3px solid #ffce56;
-}
-
-.mood-message {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  color: black;
-  font-weight: bold;
-}
-
-.highlight {
-  color: #ffce56;
-  font-weight: bold;
-}
-
-.content {
-  margin-top: 1rem;
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.content img.meme {
-  margin-top: 10px;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-blockquote {
-  font-style: italic;
-  margin-top: 10px;
-  font-size: 1.1rem;
-  color: black;
-}
+  }
+  
+  .mood-tracker {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+   border-radius: 40px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  .mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .mood {
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f3e8ff, #e8d0ff);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .mood:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
+  }
+  
+  .selected-mood {
+    border: 3px solid #ffce56;
+  }
+  
+  .mood-message {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .highlight {
+    color: #ffce56;
+    font-weight: bold;
+  }
+  
+  .content {
+    margin-top: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .content img.meme {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  blockquote {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: black;
+  }

@@ -1,221 +1,212 @@
 /* General styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.habit-tracker {
-  width: 90%;
-  max-width: 1200px;
-  background: linear-gradient(145deg, #2d4e75, #233c60);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 20px;
-  overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #ff9f40;
-}
-
-/* Input section */
-.habit-inputs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-}
-
-.habit-input {
-  width: 70%;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  outline: none;
-  background: linear-gradient(145deg, #233c60, #2d4e75);
-  color: #fff;
-  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.4), inset -3px -3px 8px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.habit-input:focus {
-  box-shadow: 0px 0px 15px #ff9f40;
-}
-
-.add-habit-btn {
-  background: linear-gradient(145deg, #ff7f40, #e67335);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 8px 15px rgba(255, 127, 64, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.add-habit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 20px rgba(255, 127, 64, 0.3);
-}
-
-.habit-section {
-  margin-top: 20px;
-  padding: 20px;
-  background: linear-gradient(145deg, #233c60, #2d4e75);
-  border-radius: 15px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.habit-section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ffce56;
-}
-
-/* Habit items */
-.habit-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(145deg, #1d375a, #2c4a70);
-  padding: 12px 15px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
-}
-
-.habit-item:hover {
-  transform: translateY(-5px);
-}
-
-.habit-item span {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffce56;
-}
-
-/* Buttons inside habit items */
-.toggle-btn {
-  background: linear-gradient(145deg, #4bc0c0, #44a1a1);
-  color: white;
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: none;
-  font-size: 0.9rem;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.toggle-btn:hover {
-  transform: scale(1.1);
-}
-
-.toggle-btn.completed {
-  background: linear-gradient(145deg, #ff6384, #e65976);
-}
-
-.remove-btn {
-  background: linear-gradient(145deg, #ff6b6b, #e65959);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: none;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.remove-btn:hover {
-  transform: scale(1.1);
-}
-
-/* Chart section */
-/* .chart-container {
-  margin-top: 30px;
-  padding: 20px;
-  background: linear-gradient(145deg, #233c60, #2d4e75);
-  border-radius: 15px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-} */
-
-canvas {
-  max-width: 100%;
-  margin: 0 auto;
-}
-.chart-container {
-  max-width: 400px;
-  margin: 0 auto;
-}
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
+  
   .habit-tracker {
-    padding: 15px;
+    width: 90%;
+    max-width: 1200px;
+    background: linear-gradient(145deg, #2d4e75, #233c60);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
   }
-
+  
   .title {
-    font-size: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ff9f40;
   }
-
+  
+  /* Input section */
+  .habit-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
   .habit-input {
-    width: 60%;
+    width: 70%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    background: linear-gradient(145deg, #233c60, #2d4e75);
+    color: #fff;
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.4), inset -3px -3px 8px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
   }
-
+  
+  .habit-input:focus {
+    box-shadow: 0px 0px 15px #ff9f40;
+  }
+  
   .add-habit-btn {
-    font-size: 0.9rem;
-    padding: 10px 15px;
+    background: linear-gradient(145deg, #ff7f40, #e67335);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 127, 64, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
+  
+  .add-habit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px rgba(255, 127, 64, 0.3);
+  }
+  
+  .habit-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(145deg, #233c60, #2d4e75);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .habit-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffce56;
+  }
+  
+  /* Habit items */
+  .habit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(145deg, #1d375a, #2c4a70);
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .habit-item:hover {
+    transform: translateY(-5px);
+  }
+  
   .habit-item span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffce56;
+  }
+  
+  /* Buttons inside habit items */
+  .toggle-btn {
+    background: linear-gradient(145deg, #4bc0c0, #44a1a1);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
     font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
-  .toggle-btn,
+  
+  .toggle-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .toggle-btn.completed {
+    background: linear-gradient(145deg, #ff6384, #e65976);
+  }
+  
   .remove-btn {
-    font-size: 0.8rem;
-    padding: 6px 7px;
-    margin-left: 10px;
+    background: linear-gradient(145deg, #ff6b6b, #e65959);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-}
-/* 
-.chart-container {
-  max-width: 400px;
-  margin: 0 auto;
-}
+  
+  .remove-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Chart section */
+  /* .chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, #233c60, #2d4e75);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  } */
+  
+  canvas {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .chart-container {
-    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .habit-tracker {
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .habit-input {
+      width: 60%;
+    }
+  
+    .add-habit-btn {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+    }
+  
+    .habit-item span {
+      font-size: 0.9rem;
+    }
+  
+    .toggle-btn,
+    .remove-btn {
+      font-size: 0.8rem;
+      padding: 6px 7px;
+      margin-left: 10px;
+    }
   }
 
-
-
   
   
+    
